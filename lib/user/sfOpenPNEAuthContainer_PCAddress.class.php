@@ -9,6 +9,8 @@
  */
 class sfOpenPNEAuthContainer_PCAddress extends sfOpenPNEAuthContainer
 {
+  protected $authModuleName = 'pcAddress';
+
   /**
    * Fetches data from storage container.
    *
