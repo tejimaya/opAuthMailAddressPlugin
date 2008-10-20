@@ -42,4 +42,9 @@ class sfOpenPNEAuthForm_PCAddress extends sfOpenPNEAuthForm
     unset($this->validatorSchema[$name]);
     unset($this->widgetSchema[$name]);
   }
+
+  public function getAuthMode()
+  {
+    return 'PCAddress';
+  }
 }
