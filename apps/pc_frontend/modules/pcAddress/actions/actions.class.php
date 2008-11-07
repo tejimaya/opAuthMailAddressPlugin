@@ -22,8 +22,9 @@ class pcAddressActions extends sfActions
         $member = $this->getUser()->getAuthContainer()->registerEmailAddress($params['pc_address']);
         $token = MemberConfigPeer::retrieveByNameAndMemberId('pc_address_token', $member->getId());
 
-        $subject = OpenPNEConfig::get('sns_name') . 'の招待状が届いています';
-        $this->sendMail($subject, 'requestRegisterURLMail', $params['pc_address'], OpenPNEConfig::get('admin_mail_address'), array('token' => $token->getValue()));
+        $subject = OpenPNEConfig::get('sns_name').'の招待状が届いています';
+        $body = $this->getPartial('global/requestRegisterURLMail', array('token' => $token->getValue()));
+        sfOpenPNEMailSend::execute($subject, $params['pc_address'], OpenPNEConfig::get('admin_mail_address'), $body);
 
         return sfView::SUCCESS;
       }
