@@ -57,18 +57,4 @@ class pcAddressActions extends sfActions
     $this->getUser()->setIsSNSMember(true);
     $this->redirect('member/home');
   }
-
-  private function sendMail($subject, $template, $to, $from, $params = array())
-  {
-    $swift = new Swift(new Swift_Connection_NativeMail());
-
-    $msg = new Swift_Message(
-      mb_convert_encoding($subject, 'JIS', 'UTF-8'),
-      mb_convert_encoding($this->getPartial($template, $params), 'JIS', 'UTF-8'),
-      'text/plain', '7bit', 'iso-2022-jp'
-    );
-    $msg->headers->setCharset('ISO-2022-JP');
-
-    return $swift->send($msg, $to, $from);
-  }
 }
