@@ -12,19 +12,18 @@ class pcAddressActions extends sfActions
 {
   public function executeRequestRegisterURL($request)
   {
-    $this->form = new PCAddressForm();
+    $this->form = new InviteForm();
+    if ($request->isMethod('post'))
+    {
+      $this->form->bind($request->getParameter('member_config'));
+      if ($this->form->isValid())
+      {
+        $this->form->save();
 
-    if ($request->isMethod('post')) {
-      $params = $request->getParameter('pc_address');
-      $this->form->bind($params);
-
-      if ($this->form->isValid()) {
-        $member = $this->getUser()->getAuthContainer()->registerEmailAddress($params['pc_address']);
-        $token = MemberConfigPeer::retrieveByNameAndMemberId('pc_address_token', $member->getId());
-
-        $subject = OpenPNEConfig::get('sns_name').'の招待状が届いています';
-        $body = $this->getPartial('global/requestRegisterURLMail', array('token' => $token->getValue()));
-        sfOpenPNEMailSend::execute($subject, $params['pc_address'], OpenPNEConfig::get('admin_mail_address'), $body);
+        $mail = new sfOpenPNEMailSend();
+        $mail->setSubject(OpenPNEConfig::get('sns_name').'の招待状が届いています');
+        $mail->setTemplate('global/requestRegisterURLMail', array('token' => $this->form->getToken()));
+        $mail->send($this->form->getMailAddress(), OpenPNEConfig::get('admin_mail_address'));
 
         return sfView::SUCCESS;
       }
