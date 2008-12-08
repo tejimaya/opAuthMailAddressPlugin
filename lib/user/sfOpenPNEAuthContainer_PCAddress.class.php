@@ -42,6 +42,8 @@ class sfOpenPNEAuthContainer_PCAddress extends sfOpenPNEAuthContainer
    */
   public function isRegisterBegin($member_id = null)
   {
+    opActivateBehavior::disable();
+
     $member = MemberPeer::retrieveByPk((int)$member_id);
 
     if (!$member) {
@@ -66,6 +68,8 @@ class sfOpenPNEAuthContainer_PCAddress extends sfOpenPNEAuthContainer
    */
   public function isRegisterFinish($member_id = null)
   {
+    opActivateBehavior::disable();
+
     $data = MemberPeer::retrieveByPk((int)$member_id);
 
     if (!$data) {
@@ -88,6 +92,8 @@ class sfOpenPNEAuthContainer_PCAddress extends sfOpenPNEAuthContainer
    */
   public function registerData($memberId, $form)
   {
+    opActivateBehavior::disable();
+
     if (!$memberId) {
       return false;
     }
@@ -105,6 +111,8 @@ class sfOpenPNEAuthContainer_PCAddress extends sfOpenPNEAuthContainer
    */
   public function registerEmailAddress($address)
   {
+    opActivateBehavior::disable();
+
     $memberConfig = MemberConfigPeer::retrieveByNameAndValue('pc_address_pre', $address);
     if ($memberConfig) {
       $memberConfig->saveToken();
