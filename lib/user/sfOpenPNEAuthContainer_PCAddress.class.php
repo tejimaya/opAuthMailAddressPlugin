@@ -12,30 +12,6 @@ class sfOpenPNEAuthContainer_PCAddress extends sfOpenPNEAuthContainer
   protected $authModuleName = 'pcAddress';
 
   /**
-   * Fetches data from storage container.
-   *
-   * @param  sfForm $form
-   * @return int    the member id
-   */
-  public function fetchData($form)
-  {
-    $pc_address = $form->getValue('pc_address');
-    $password = $form->getValue('password');
-
-    $data = MemberConfigPeer::retrieveByNameAndValue('pc_address', $pc_address);
-    if (!$data) {
-      return false;
-    }
-
-    $valid_password = MemberConfigPeer::retrieveByNameAndMemberId('password', $data->getMember()->getId())->getValue();
-    if (md5($password) === $valid_password) {
-      return $data->getMember()->getId();
-    }
-
-    return false;
-  }
-
-  /**
    * Returns true if the current state is a beginning of register.
    *
    * @return bool returns true if the current state is a beginning of register, false otherwise
