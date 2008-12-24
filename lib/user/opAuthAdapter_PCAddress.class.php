@@ -1,13 +1,13 @@
 <?php
 
 /**
- * sfOpenPNEAuthContainer_PCAddress will handle credential for PCAddress.
+ * opAuthAdapterPCAddress will handle credential for PCAddress.
  *
  * @package    OpenPNE
  * @subpackage user
  * @author     Kousuke Ebihara <ebihara@tejimaya.com>
  */
-class sfOpenPNEAuthContainer_PCAddress extends sfOpenPNEAuthContainer
+class opAuthAdapterPCAddress extends opAuthAdapter
 {
   protected $authModuleName = 'pcAddress';
 
