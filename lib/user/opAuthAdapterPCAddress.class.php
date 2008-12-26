@@ -76,31 +76,4 @@ class opAuthAdapterPCAddress extends opAuthAdapter
     $memberConfig->setName('pc_address');
     return $memberConfig->save();
   }
-
-  /**
-   * Registers E-mail address.
-   *
-   * @param  string $address
-   * @return Member
-   */
-  public function registerEmailAddress($address)
-  {
-    $memberConfig = MemberConfigPeer::retrieveByNameAndValue('pc_address_pre', $address);
-    if ($memberConfig) {
-      $memberConfig->saveToken();
-      return $memberConfig->getMember();
-    }
-
-    $member = new Member();
-    $member->setIsActive(false);
-
-    $memberConfig = new MemberConfig();
-    $memberConfig->setName('pc_address');
-    $memberConfig->setValue($address);
-    $memberConfig->setMember($member);
-    $memberConfig->savePre();
-    $memberConfig->saveToken();
-
-    return $member;
-  }
 }
