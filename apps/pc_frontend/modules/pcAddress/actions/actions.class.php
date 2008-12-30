@@ -33,6 +33,11 @@ class pcAddressActions extends sfActions
     $memberConfig = MemberConfigPeer::retrieveByNameAndValue('pc_address_token', $token);
     $this->forward404Unless($memberConfig, 'This URL is invalid.');
 
+    opActivateBehavior::disable();
+    $authMode = $memberConfig->getMember()->getConfig('register_auth_mode');
+    opActivateBehavior::enable();
+    $this->forward404Unless($authMode === $request->getParameter('authMode') && $authMode === $this->getUser()->getCurrentAuthMode());
+
     $this->getUser()->setMemberId($memberConfig->getMemberId());
     $this->getUser()->setIsSNSRegisterBegin(true);
 

@@ -48,13 +48,16 @@ class opAuthAdapterPCAddress extends opAuthAdapter
     $data = MemberPeer::retrieveByPk((int)$member_id);
     opActivateBehavior::enable();
 
-    if (!$data) {
+    if (!$data || !$data->getName() || !$data->getProfiles()) {
       return false;
     }
 
-    if ($data->getIsActive()) {
+    if ($data->getIsActive())
+    {
       return false;
-    } else {
+    }
+    else
+    {
       return true;
     }
   }
