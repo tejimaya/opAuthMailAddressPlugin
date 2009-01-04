@@ -1,5 +1,5 @@
 <h2>プラグイン設定</h2>
-<form action="<?php echo url_for('opAuthPCAddressPlugin/index') ?>" method="post">
+<form action="<?php echo url_for('opAuthMailAddressPlugin/index') ?>" method="post">
 <table>
 <?php echo $form ?>
 <tr>

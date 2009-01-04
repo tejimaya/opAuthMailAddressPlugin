@@ -1,18 +1,18 @@
 <?php
 
 /**
- * pcAddress actions.
+ * opAuthMailAddress actions.
  *
  * @package    OpenPNE
  * @subpackage pcAddress
  * @author     Kousuke Ebihara <ebihara@tejimaya.com>
  * @version    SVN: $Id: actions.class.php 9301 2008-05-27 01:08:46Z dwhittle $
  */
-class pcAddressActions extends sfActions
+class opAuthMailAddressActions extends sfActions
 {
   public function executeRequestRegisterURL($request)
   {
-    $adapter = new opAuthAdapterPCAddress('PCAddress');
+    $adapter = new opAuthAdapterMailAddress('MailAddress');
     if ($adapter->getAuthConfig('invite_mode') < 2)
     {
       $this->forward404();
@@ -35,7 +35,7 @@ class pcAddressActions extends sfActions
 
   public function executeRegister($request)
   {
-    $this->getUser()->setCurrentAuthMode('PCAddress');
+    $this->getUser()->setCurrentAuthMode('MailAddress');
 
     $token = $request->getParameter('token');
     $memberConfig = MemberConfigPeer::retrieveByNameAndValue('pc_address_token', $token);
@@ -43,10 +43,6 @@ class pcAddressActions extends sfActions
 
     opActivateBehavior::disable();
     $authMode = $memberConfig->getMember()->getConfig('register_auth_mode');
-    if ($authMode === 'MobileAddress')
-    {
-      $authMode = 'PCAddress';
-    }
     opActivateBehavior::enable();
     $this->forward404Unless($authMode === $this->getUser()->getCurrentAuthMode());
 

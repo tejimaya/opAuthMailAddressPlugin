@@ -1,13 +1,13 @@
 <?php
 
 /**
- * opAuthPCAddressPlugin actions.
+ * opAuthMailAddressPlugin actions.
  *
  * @package    OpenPNE
- * @subpackage opAuthPCAddressPlugin
+ * @subpackage opAuthMailAddressPlugin
  * @author     Kousuke Ebihara <ebihara@tejimaya.com>
  */
-class opAuthPCAddressPluginActions extends sfActions
+class opAuthMailAddressPluginActions extends sfActions
 {
  /**
   * Executes index action
@@ -16,7 +16,7 @@ class opAuthPCAddressPluginActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    $adapter = new opAuthAdapterPCAddress('PCAddress');
+    $adapter = new opAuthAdapterMailAddress('MailAddress');
     $this->form = $adapter->getAuthConfigForm();
     if ($request->isMethod(sfWebRequest::POST))
     {
@@ -24,7 +24,7 @@ class opAuthPCAddressPluginActions extends sfActions
       if ($this->form->isValid())
       {
         $this->form->save();
-        $this->redirect('opAuthPCAddressPlugin/index');
+        $this->redirect('opAuthMailAddressPlugin/index');
       }
     }
   }
