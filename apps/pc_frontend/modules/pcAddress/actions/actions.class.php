@@ -12,6 +12,12 @@ class pcAddressActions extends sfActions
 {
   public function executeRequestRegisterURL($request)
   {
+    $adapter = new opAuthAdapterPCAddress('PCAddress');
+    if ($adapter->getAuthConfig('invite_mode') < 2)
+    {
+      $this->forward404();
+    }
+
     $this->form = new InviteForm();
     if ($request->isMethod('post'))
     {
