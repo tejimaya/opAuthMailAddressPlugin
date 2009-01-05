@@ -45,4 +45,20 @@ class opAuthLoginFormMailAddress extends opAuthLoginForm
 
     parent::configure();
   }
+
+  public function doSave()
+  {
+    if (sfConfig::get('app_is_mobile', false))
+    {
+      $memberConfig = MemberConfigPeer::retrieveByNameAndMemberId('mobile_address_pre', $this->getMember()->getId());
+      $memberConfig->setName('mobile_address');
+    }
+    else
+    {
+      $memberConfig = MemberConfigPeer::retrieveByNameAndMemberId('pc_address_pre', $this->getMember()->getId());
+      $memberConfig->setName('pc_address');
+    }
+
+    return $memberConfig->save();
+  }
 }

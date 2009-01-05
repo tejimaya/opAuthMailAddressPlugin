@@ -68,31 +68,4 @@ class opAuthAdapterMailAddress extends opAuthAdapter
       return true;
     }
   }
-
-  /**
-   * Registers data to storage container.
-   *
-   * @param  int    $memberId
-   * @param  sfForm $form
-   * @return bool   true if the data has already been saved, false otherwise
-   */
-  public function registerData($memberId, $form)
-  {
-    if (!$memberId)
-    {
-      return false;
-    }
-
-    if (sfConfig::get('app_is_mobile', false))
-    {
-      $memberConfig = MemberConfigPeer::retrieveByNameAndMemberId('mobile_address_pre', $memberId);
-      $memberConfig->setName('mobile_address');
-    }
-    else
-    {
-      $memberConfig = MemberConfigPeer::retrieveByNameAndMemberId('pc_address_pre', $memberId);
-      $memberConfig->setName('pc_address');
-    }
-    return $memberConfig->save();
-  }
 }
