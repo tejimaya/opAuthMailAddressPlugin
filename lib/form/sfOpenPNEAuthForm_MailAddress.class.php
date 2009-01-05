@@ -21,18 +21,27 @@ class sfOpenPNEAuthForm_MailAddress extends sfOpenPNEAuthForm
       'password' => new sfValidatorString(),
     )));
 
-    if (sfConfig::get('app_is_mobile', false))
+    if ($this->getAuthAdapter()->getAuthConfig('is_check_multiple_address'))
     {
-      $configName = 'mobile_address';
+      $this->mergePostValidator(new sfValidatorOr(array(
+        new opAuthValidatorMemberConfigAndPassword(array('config_name' => 'mobile_address', 'field_name' => 'mail_address')),
+        new opAuthValidatorMemberConfigAndPassword(array('config_name' => 'pc_address', 'field_name' => 'mail_address')),
+      )));
     }
     else
     {
-      $configName = 'pc_address';
+      if (sfConfig::get('app_is_mobile', false))
+      {
+        $configName = 'mobile_address';
+      }
+      else
+      {
+        $configName = 'pc_address';
+      }
+      $this->mergePostValidator(
+        new opAuthValidatorMemberConfigAndPassword(array('config_name' => $configName, 'field_name' => 'mail_address'))
+      );
     }
-
-    $this->mergePostValidator(
-      new opAuthValidatorMemberConfigAndPassword(array('config_name' => $configName, 'field_name' => 'mail_address'))
-    );
 
     parent::configure();
   }
