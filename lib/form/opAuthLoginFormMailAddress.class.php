@@ -7,7 +7,7 @@
  * @subpackage form
  * @author     Kousuke Ebihara <ebihara@tejimaya.com>
  */
-class _opAuthLoginFormMailAddress extends opAuthLoginForm
+class opAuthLoginFormMailAddress extends opAuthLoginForm
 {
   public function configure()
   {
@@ -21,9 +21,27 @@ class _opAuthLoginFormMailAddress extends opAuthLoginForm
       'password' => new sfValidatorString(),
     )));
 
-    $this->mergePostValidator(
-      new opAuthValidatorMemberConfigAndPassword(array('config_name' => 'pc_address'))
-    );
+    if ($this->getAuthAdapter()->getAuthConfig('is_check_multiple_address'))
+    {
+      $this->mergePostValidator(new sfValidatorOr(array(
+        new opAuthValidatorMemberConfigAndPassword(array('config_name' => 'mobile_address', 'field_name' => 'mail_address')),
+        new opAuthValidatorMemberConfigAndPassword(array('config_name' => 'pc_address', 'field_name' => 'mail_address')),
+      )));
+    }
+    else
+    {
+      if (sfConfig::get('app_is_mobile', false))
+      {
+        $configName = 'mobile_address';
+      }
+      else
+      {
+        $configName = 'pc_address';
+      }
+      $this->mergePostValidator(
+        new opAuthValidatorMemberConfigAndPassword(array('config_name' => $configName, 'field_name' => 'mail_address'))
+      );
+    }
 
     parent::configure();
   }
