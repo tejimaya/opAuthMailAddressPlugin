@@ -26,6 +26,8 @@ class opAuthMailAddressActions extends sfActions
       $this->forward404();
     }
 
+    $this->forward404Unless(opToolkit::isEnabledRegistration());
+
     $this->form = new InviteForm();
     if ($request->isMethod('post'))
     {
