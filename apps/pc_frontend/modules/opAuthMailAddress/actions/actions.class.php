@@ -12,11 +12,10 @@
  * opAuthMailAddress actions.
  *
  * @package    OpenPNE
- * @subpackage pcAddress
+ * @subpackage action
  * @author     Kousuke Ebihara <ebihara@tejimaya.com>
- * @version    SVN: $Id: actions.class.php 9301 2008-05-27 01:08:46Z dwhittle $
  */
-class opAuthMailAddressActions extends sfActions
+class opAuthMailAddressActions extends opAuthAction
 {
   public function executeRequestRegisterURL($request)
   {
@@ -60,18 +59,5 @@ class opAuthMailAddressActions extends sfActions
     $this->getUser()->setIsSNSRegisterBegin(true);
 
     $this->redirect('member/registerInput');
-  }
-
-  public function executeRegisterEnd($request)
-  {
-    $member = $this->getUser()->getMember();
-    $member->setIsActive(true);
-    $member->save();
-
-    $memberConfig = MemberConfigPeer::retrieveByNameAndMemberId('pc_address_token', $member->getId());
-    $memberConfig->delete();
-
-    $this->getUser()->setIsSNSMember(true);
-    $this->redirect('member/home');
   }
 }

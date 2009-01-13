@@ -19,6 +19,11 @@ class opAuthRegisterFormMailAddress extends opAuthRegisterForm
 {
   public function doSave()
   {
+    if ($this->getMember()->getConfig('mobile_address') || $this->getMember()->getConfig('pc_address'))
+    {
+      return true;
+    }
+
     if (sfConfig::get('app_is_mobile', false))
     {
       $memberConfig = MemberConfigPeer::retrieveByNameAndMemberId('mobile_address_pre', $this->getMember()->getId());

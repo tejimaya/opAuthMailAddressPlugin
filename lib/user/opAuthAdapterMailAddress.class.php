@@ -19,6 +19,30 @@ class opAuthAdapterMailAddress extends opAuthAdapter
 {
   protected $authModuleName = 'opAuthMailAddress';
 
+ /**
+  * @see opAuthAdapter::activate()
+  */
+  public function activate()
+  {
+    parent::activate();
+
+    $member = sfContext::getInstance()->getUser()->getMember();
+    if ($member)
+    {
+      if ($token = MemberConfigPeer::retrieveByNameAndMemberId('mobile_address_token', $member->getId()))
+      {
+        $token->delete();
+      }
+
+      if ($token = MemberConfigPeer::retrieveByNameAndMemberId('pc_address_token', $member->getId()))
+      {
+        $token->delete();
+      }
+    }
+
+    return $member;
+  }
+
   /**
    * Returns true if the current state is a beginning of register.
    *

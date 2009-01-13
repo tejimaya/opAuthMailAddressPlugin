@@ -15,7 +15,7 @@
  * @subpackage opAuthMailAddressPlugin
  * @author     Kousuke Ebihara <ebihara@tejimaya.com>
  */
-class opAuthMailAddressActions extends sfActions
+class opAuthMailAddressActions extends opAuthAction
 {
   public function executeRequestRegisterURL($request)
   {
@@ -59,18 +59,5 @@ class opAuthMailAddressActions extends sfActions
     $this->getUser()->setIsSNSRegisterBegin(true);
 
     $this->redirect('member/registerInput');
-  }
-
-  public function executeRegisterEnd($request)
-  {
-    $member = $this->getUser()->getMember();
-    $member->setIsActive(true);
-    $member->save();
-
-    $memberConfig = MemberConfigPeer::retrieveByNameAndMemberId('mobile_address_token', $member->getId());
-    $memberConfig->delete();
-
-    $this->getUser()->setIsSNSMember(true);
-    $this->redirect('member/home');
   }
 }
