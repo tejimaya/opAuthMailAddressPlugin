@@ -29,12 +29,12 @@ class opAuthAdapterMailAddress extends opAuthAdapter
     $member = sfContext::getInstance()->getUser()->getMember();
     if ($member)
     {
-      if ($token = MemberConfigPeer::retrieveByNameAndMemberId('mobile_address_token', $member->getId()))
+      if ($token = Doctrine::getTable('MemberConfig')->retrieveByNameAndMemberId('mobile_address_token', $member->getId()))
       {
         $token->delete();
       }
 
-      if ($token = MemberConfigPeer::retrieveByNameAndMemberId('pc_address_token', $member->getId()))
+      if ($token = Doctrine::getTable('MemberConfig')->retrieveByNameAndMemberId('pc_address_token', $member->getId()))
       {
         $token->delete();
       }
@@ -51,7 +51,7 @@ class opAuthAdapterMailAddress extends opAuthAdapter
   public function isRegisterBegin($member_id = null)
   {
     opActivateBehavior::disable();
-    $member = MemberPeer::retrieveByPk((int)$member_id);
+    $member = Doctrine::getTable('Member')->find((int)$member_id);
     opActivateBehavior::enable();
 
     if (!$member)
@@ -59,8 +59,8 @@ class opAuthAdapterMailAddress extends opAuthAdapter
       return false;
     }
 
-    if (!MemberConfigPeer::retrieveByNameAndMemberId('pc_address_pre', $member->getId())
-      && !MemberConfigPeer::retrieveByNameAndMemberId('mobile_address_pre', $member->getId()))
+    if (!Doctrine::getTable('MemberConfig')->retrieveByNameAndMemberId('pc_address_pre', $member->getId())
+      && !Doctrine::getTable('MemberConfig')->retrieveByNameAndMemberId('mobile_address_pre', $member->getId()))
     {
       return false;
     }
@@ -83,7 +83,7 @@ class opAuthAdapterMailAddress extends opAuthAdapter
   public function isRegisterFinish($member_id = null)
   {
     opActivateBehavior::disable();
-    $data = MemberPeer::retrieveByPk((int)$member_id);
+    $data = Doctrine::getTable('Member')->find((int)$member_id);
     opActivateBehavior::enable();
 
     if (!$data || !$data->getName() || !$data->getProfiles())

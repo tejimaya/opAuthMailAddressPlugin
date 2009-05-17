@@ -27,7 +27,7 @@ class opAuthMailAddressActions extends opAuthAction
 
     $this->forward404Unless(opToolkit::isEnabledRegistration());
 
-    $this->form = new InviteForm();
+    $this->form = new InviteForm(null, array('authMode' => 'MailAddress'));
     if ($request->isMethod('post'))
     {
       $this->form->bind($request->getParameter('member_config'));
@@ -47,7 +47,7 @@ class opAuthMailAddressActions extends opAuthAction
     $this->getUser()->setCurrentAuthMode('MailAddress');
 
     $token = $request->getParameter('token');
-    $memberConfig = MemberConfigPeer::retrieveByNameAndValue('mobile_address_token', $token);
+    $memberConfig = Doctrine::getTable('MemberConfig')->retrieveByNameAndValue('mobile_address_token', $token);
     $this->forward404Unless($memberConfig, 'This URL is invalid.');
 
     opActivateBehavior::disable();
