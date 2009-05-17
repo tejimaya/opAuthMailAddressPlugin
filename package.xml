@@ -13,35 +13,35 @@
   <email />
   <active>yes</active>
  </lead>
- <date>2009-02-05</date>
- <time>05:41:18</time>
+ <date>2009-05-17</date>
+ <time>15:00:33</time>
  <version>
-  <release>1.0.0</release>
-  <api>1.0.0</api>
+  <release>1.1.0</release>
+  <api>1.1.0</api>
  </version>
  <stability>
-  <release>stable</release>
-  <api>stable</api>
+  <release>beta</release>
+  <api>beta</api>
  </stability>
- <license>Apache</license>
- <notes>First release</notes>
+ <license>apache</license>
+ <notes>This plugin is now compatible with Doctrine</notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <file baseinstalldir="/" md5sum="74de89b1b8174ffa9d671154b4c0745b" name="apps/mobile_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="fd0c03de704d31890b5bd700e2508f2a" name="apps/mobile_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="f441195d36bf1948e40e2ba635bcf45d" name="apps/mobile_frontend/modules/opAuthMailAddress/config/security.yml" role="data" />
    <file baseinstalldir="/" md5sum="f9eef69c422903f749ffce8454891a35" name="apps/mobile_frontend/modules/opAuthMailAddress/templates/requestRegisterURLInput.php" role="data" />
    <file baseinstalldir="/" md5sum="56990ca4fb0fd4a90c3377222b9deab6" name="apps/mobile_frontend/modules/opAuthMailAddress/templates/requestRegisterURLSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="8fca375711ed1f3706677bad063df53b" name="apps/pc_backend/modules/opAuthMailAddressPlugin/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="2ac41c31d3188b575063f1b8656ee8be" name="apps/pc_backend/modules/opAuthMailAddressPlugin/templates/indexSuccess.php" role="data" />
-   <file baseinstalldir="/" md5sum="c90a1a35e347d458765bd62067a98a18" name="apps/pc_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="f696aff3dc0e00bb3237d7067ceb52e3" name="apps/pc_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="f441195d36bf1948e40e2ba635bcf45d" name="apps/pc_frontend/modules/opAuthMailAddress/config/security.yml" role="data" />
    <file baseinstalldir="/" md5sum="61aad657ca56c1d27d0df6fcd3044621" name="apps/pc_frontend/modules/opAuthMailAddress/templates/requestRegisterURLInput.php" role="data" />
    <file baseinstalldir="/" md5sum="3b6085a8bb08fe6777c8fc2fdebc5027" name="apps/pc_frontend/modules/opAuthMailAddress/templates/requestRegisterURLSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="800d21fb02f0bf582816b77a92cb2c69" name="config/auth.yml" role="data" />
    <file baseinstalldir="/" md5sum="835c2843d1f0dda62d1a38b63868fcc0" name="lib/form/opAuthConfigFormMailAddress.class.php" role="data" />
    <file baseinstalldir="/" md5sum="fe2fdd818abd083ce92d6876812bc3ac" name="lib/form/opAuthLoginFormMailAddress.class.php" role="data" />
-   <file baseinstalldir="/" md5sum="2be01b55d9a617be124cf5a33f6ccf08" name="lib/form/opAuthRegisterFormMailAddress.class.php" role="data" />
-   <file baseinstalldir="/" md5sum="171ae3fcd351442acc73e0ce8af213f6" name="lib/user/opAuthAdapterMailAddress.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="3a295dbb216332bc7a84bd7153a41554" name="lib/form/opAuthRegisterFormMailAddress.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="32ed66664df89cccfe4f69c5e0c9e97f" name="lib/user/opAuthAdapterMailAddress.class.php" role="data" />
    <file baseinstalldir="/" md5sum="3b83ef96387f14655fc854ddc3c6bd57" name="LICENSE" role="data" />
   </dir>
  </contents>
@@ -74,6 +74,19 @@
    <date>2009-02-05</date>
    <license>Apache</license>
    <notes>First release</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.1.0</release>
+    <api>1.1.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2009-05-17</date>
+   <license>apache</license>
+   <notes>This plugin is now compatible with Doctrine</notes>
   </release>
  </changelog>
 </package>
