@@ -28,6 +28,8 @@ class opAuthMailAddressActions extends opAuthAction
     $this->forward404Unless(opToolkit::isEnabledRegistration());
 
     $this->form = new InviteForm(null, array('authMode' => 'MailAddress'));
+    opToolkit::appendMobileInputModeAttributesForFormWidget($this->form['mail_address']->getWidget());
+
     if ($request->isMethod('post'))
     {
       $this->form->bind($request->getParameter('member_config'));
