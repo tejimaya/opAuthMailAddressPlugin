@@ -13,21 +13,21 @@
   <email />
   <active>yes</active>
  </lead>
- <date>2009-05-17</date>
- <time>15:00:33</time>
+ <date>2009-07-18</date>
+ <time>06:25:18</time>
  <version>
-  <release>1.1.0</release>
-  <api>1.1.0</api>
+  <release>1.1.1</release>
+  <api>1.1.1</api>
  </version>
  <stability>
   <release>beta</release>
   <api>beta</api>
  </stability>
  <license>apache</license>
- <notes>This plugin is now compatible with Doctrine</notes>
+ <notes>added an improved for mobile</notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <file baseinstalldir="/" md5sum="fd0c03de704d31890b5bd700e2508f2a" name="apps/mobile_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="f8a6e6701ec39aa9e04fe3b11c4f3e65" name="apps/mobile_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="f441195d36bf1948e40e2ba635bcf45d" name="apps/mobile_frontend/modules/opAuthMailAddress/config/security.yml" role="data" />
    <file baseinstalldir="/" md5sum="f9eef69c422903f749ffce8454891a35" name="apps/mobile_frontend/modules/opAuthMailAddress/templates/requestRegisterURLInput.php" role="data" />
    <file baseinstalldir="/" md5sum="56990ca4fb0fd4a90c3377222b9deab6" name="apps/mobile_frontend/modules/opAuthMailAddress/templates/requestRegisterURLSuccess.php" role="data" />
@@ -87,6 +87,19 @@
    <date>2009-05-17</date>
    <license>apache</license>
    <notes>This plugin is now compatible with Doctrine</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.1.1</release>
+    <api>1.1.1</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2009-07-18</date>
+   <license>apache</license>
+   <notes>added an improved for mobile</notes>
   </release>
  </changelog>
 </package>
