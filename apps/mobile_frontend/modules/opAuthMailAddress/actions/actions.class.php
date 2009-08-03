@@ -55,6 +55,11 @@ class opAuthMailAddressActions extends opAuthAction
     opActivateBehavior::disable();
     $authMode = $memberConfig->getMember()->getConfig('register_auth_mode');
     opActivateBehavior::enable();
+
+    if ('MobileUID' === $authMode)
+    {
+      $authMode = 'MailAddress';
+    }
     $this->forward404Unless($authMode === $this->getUser()->getCurrentAuthMode());
 
     $this->getUser()->setMemberId($memberConfig->getMemberId());
