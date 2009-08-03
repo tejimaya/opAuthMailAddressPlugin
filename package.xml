@@ -13,27 +13,27 @@
   <email />
   <active>yes</active>
  </lead>
- <date>2009-07-18</date>
- <time>06:25:18</time>
+ <date>2009-08-03</date>
+ <time>12:39:22</time>
  <version>
-  <release>1.1.1</release>
-  <api>1.1.1</api>
+  <release>1.1.3</release>
+  <api>1.1.3</api>
  </version>
  <stability>
   <release>beta</release>
   <api>beta</api>
  </stability>
  <license>apache</license>
- <notes>added an improved for mobile</notes>
+ <notes>[opAuthMailAddress] temporal cope for #4219</notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <file baseinstalldir="/" md5sum="f8a6e6701ec39aa9e04fe3b11c4f3e65" name="apps/mobile_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="fb0d7ee4e638222b5ad153a9d4162f4a" name="apps/mobile_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="f441195d36bf1948e40e2ba635bcf45d" name="apps/mobile_frontend/modules/opAuthMailAddress/config/security.yml" role="data" />
-   <file baseinstalldir="/" md5sum="f9eef69c422903f749ffce8454891a35" name="apps/mobile_frontend/modules/opAuthMailAddress/templates/requestRegisterURLInput.php" role="data" />
+   <file baseinstalldir="/" md5sum="804c8f69d0041d47c75b2f9493ad0497" name="apps/mobile_frontend/modules/opAuthMailAddress/templates/requestRegisterURLInput.php" role="data" />
    <file baseinstalldir="/" md5sum="56990ca4fb0fd4a90c3377222b9deab6" name="apps/mobile_frontend/modules/opAuthMailAddress/templates/requestRegisterURLSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="8fca375711ed1f3706677bad063df53b" name="apps/pc_backend/modules/opAuthMailAddressPlugin/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="2ac41c31d3188b575063f1b8656ee8be" name="apps/pc_backend/modules/opAuthMailAddressPlugin/templates/indexSuccess.php" role="data" />
-   <file baseinstalldir="/" md5sum="f696aff3dc0e00bb3237d7067ceb52e3" name="apps/pc_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="ddc17f48a1fbe2ec1f8f44da47182784" name="apps/pc_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="f441195d36bf1948e40e2ba635bcf45d" name="apps/pc_frontend/modules/opAuthMailAddress/config/security.yml" role="data" />
    <file baseinstalldir="/" md5sum="61aad657ca56c1d27d0df6fcd3044621" name="apps/pc_frontend/modules/opAuthMailAddress/templates/requestRegisterURLInput.php" role="data" />
    <file baseinstalldir="/" md5sum="3b6085a8bb08fe6777c8fc2fdebc5027" name="apps/pc_frontend/modules/opAuthMailAddress/templates/requestRegisterURLSuccess.php" role="data" />
@@ -100,6 +100,32 @@
    <date>2009-07-18</date>
    <license>apache</license>
    <notes>added an improved for mobile</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.1.2</release>
+    <api>1.1.2</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2009-07-27</date>
+   <license>apache</license>
+   <notes>added support for some customizes (experimental)</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.1.3</release>
+    <api>1.1.3</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2009-08-03</date>
+   <license>apache</license>
+   <notes>[opAuthMailAddress] temporal cope for #4219</notes>
   </release>
  </changelog>
 </package>
