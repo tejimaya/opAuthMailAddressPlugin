@@ -1,17 +1,8 @@
 <?php include_customizes('inputForm', 'top') ?>
-<p>ﾒｰﾙｱﾄﾞﾚｽを入力してください。</p>
-<p>入力されたﾒｰﾙｱﾄﾞﾚｽ宛に <?php echo $op_config['sns_name'] ?> の招待状が送信されます。</p>
+<p>新規登録をするには以下のﾘﾝｸから、本文を入力せずにﾒｰﾙを送信してください。</p>
 <?php include_customizes('inputForm', 'formTop') ?>
-<form action="<?php echo url_for('opAuthMailAddress/requestRegisterURL') ?>" method="post">
-<?php if ($form->hasGlobalErrors()): ?>
-<?php echo $form->renderGlobalErrors() ?><br>
-<?php endif; ?>
-<table>
-<?php echo $form ?>
-<tr>
-<td><input type="submit" value="送信" /></td>
-</tr>
-</table>
+<br>
+[i:106]<?php echo op_mail_to('register_sns', array(), 'ﾒｰﾙで登録') ?>
+<br>
 <?php include_customizes('inputForm', 'formBottom') ?>
-</form>
 <?php include_customizes('inputForm', 'bottom') ?>
