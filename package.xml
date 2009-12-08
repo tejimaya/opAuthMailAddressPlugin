@@ -13,24 +13,27 @@
   <email />
   <active>yes</active>
  </lead>
- <date>2009-08-03</date>
- <time>12:39:22</time>
+ <date>2009-08-20</date>
+ <time>05:39:06</time>
  <version>
-  <release>1.1.3</release>
-  <api>1.1.3</api>
+  <release>1.1.4.1</release>
+  <api>1.1.4.1</api>
  </version>
  <stability>
   <release>beta</release>
   <api>beta</api>
  </stability>
  <license>apache</license>
- <notes>[opAuthMailAddress] temporal cope for #4219</notes>
+ <notes>This is a development release. Added support for registering via empty email experimentaly.</notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <file baseinstalldir="/" md5sum="fb0d7ee4e638222b5ad153a9d4162f4a" name="apps/mobile_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="0a0d60725987a193daeff8a42cce110a" name="apps/mobile_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="f441195d36bf1948e40e2ba635bcf45d" name="apps/mobile_frontend/modules/opAuthMailAddress/config/security.yml" role="data" />
-   <file baseinstalldir="/" md5sum="804c8f69d0041d47c75b2f9493ad0497" name="apps/mobile_frontend/modules/opAuthMailAddress/templates/requestRegisterURLInput.php" role="data" />
-   <file baseinstalldir="/" md5sum="56990ca4fb0fd4a90c3377222b9deab6" name="apps/mobile_frontend/modules/opAuthMailAddress/templates/requestRegisterURLSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="6d04f808bc0c9d6be33d3411fd47d018" name="apps/mobile_frontend/modules/opAuthMailAddress/templates/requestRegisterURLInput.php" role="data" />
+   <file baseinstalldir="/" md5sum="1c04df321f82cd1ad3f02419d5688ca7" name="apps/mobile_mail_frontend/config/routing.yml" role="data" />
+   <file baseinstalldir="/" md5sum="61df8c4b07cc8c7fd8fbdbb0158afea9" name="apps/mobile_mail_frontend/i18n/messages.ja.xml" role="data" />
+   <file baseinstalldir="/" md5sum="b48c605a3d845b825444ce83ae9cfe17" name="apps/mobile_mail_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="ba4e4467b2f18070418aa0545aecc61d" name="apps/mobile_mail_frontend/modules/opAuthMailAddress/templates/loginSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="8fca375711ed1f3706677bad063df53b" name="apps/pc_backend/modules/opAuthMailAddressPlugin/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="2ac41c31d3188b575063f1b8656ee8be" name="apps/pc_backend/modules/opAuthMailAddressPlugin/templates/indexSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="ddc17f48a1fbe2ec1f8f44da47182784" name="apps/pc_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
@@ -126,6 +129,32 @@
    <date>2009-08-03</date>
    <license>apache</license>
    <notes>[opAuthMailAddress] temporal cope for #4219</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.1.4</release>
+    <api>1.1.4</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2009-08-06</date>
+   <license>apache</license>
+   <notes>fixed requestRegisterURL doesn&apos;t render errors</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.1.4.1</release>
+    <api>1.1.4.1</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2009-08-20</date>
+   <license>apache</license>
+   <notes>This is a development release. Added support for registering via empty email experimentaly.</notes>
   </release>
  </changelog>
 </package>
