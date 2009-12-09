@@ -15,7 +15,7 @@
  * @subpackage action
  * @author     Kousuke Ebihara <ebihara@tejimaya.com>
  */
-class opAuthMailAddressActions extends opAuthAction
+class opAuthMailAddressActions extends opAuthMailAddressPluginAction
 {
   public function executeRequestRegisterURL($request)
   {

@@ -17,6 +17,19 @@
  */
 class opAuthRegisterFormMailAddress extends opAuthRegisterForm
 {
+  public function bindAll($request)
+  {
+    // this is just hack for limitation of MemberConfigForm
+    if (isset($request['member_config']['secret_answer']))
+    {
+      $memberConfig = $request['member_config'];
+      $memberConfig['secret_answer'] = md5($memberConfig['secret_answer']);
+      $request['member_config'] = $memberConfig;
+    }
+
+    parent::bindAll($request);
+  }
+
   public function doSave()
   {
     if ($this->getMember()->getConfig('mobile_address') || $this->getMember()->getConfig('pc_address'))

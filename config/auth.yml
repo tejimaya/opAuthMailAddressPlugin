@@ -10,6 +10,15 @@ enable_pc:
 self_invite_action:
   Default: "opAuthMailAddress/requestRegisterURL"
 
+help_login_error_action:
+  Name: "self_invite_action"
+  Caption:   ""
+  FormType:  ""
+  ValueType: ""
+  IsConfig:   false
+  IsRequired: false
+  Default: "opAuthMailAddress/helpLoginError"
+
 is_check_multiple_address:
   Name:      "is_check_multiple_address"
   Caption:   "ログイン用メールアドレス設定"
