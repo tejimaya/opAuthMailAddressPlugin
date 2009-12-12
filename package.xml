@@ -13,22 +13,25 @@
   <email />
   <active>yes</active>
  </lead>
- <date>2009-08-20</date>
- <time>05:39:06</time>
+ <date>2009-12-12</date>
+ <time>22:03:02</time>
  <version>
-  <release>1.1.4.1</release>
-  <api>1.1.4.1</api>
+  <release>1.2.0</release>
+  <api>1.2.0</api>
  </version>
  <stability>
   <release>beta</release>
   <api>beta</api>
  </stability>
  <license>apache</license>
- <notes>This is a development release. Added support for registering via empty email experimentaly.</notes>
+ <notes>Add password reminder support.</notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <file baseinstalldir="/" md5sum="0a0d60725987a193daeff8a42cce110a" name="apps/mobile_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="f4836b2af034960b1542a015cae6c4d4" name="apps/mobile_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="f441195d36bf1948e40e2ba635bcf45d" name="apps/mobile_frontend/modules/opAuthMailAddress/config/security.yml" role="data" />
+   <file baseinstalldir="/" md5sum="07cd4e6f65cfb5eabd5d0ca76f1da409" name="apps/mobile_frontend/modules/opAuthMailAddress/templates/helpLoginErrorSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="4aef3f11ce9ad46ee31119e53d4efcd0" name="apps/mobile_frontend/modules/opAuthMailAddress/templates/passwordRecoveryCompleteSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="b2cebe2d71ca89d87e299083310d809e" name="apps/mobile_frontend/modules/opAuthMailAddress/templates/passwordRecoverySuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="6d04f808bc0c9d6be33d3411fd47d018" name="apps/mobile_frontend/modules/opAuthMailAddress/templates/requestRegisterURLInput.php" role="data" />
    <file baseinstalldir="/" md5sum="1c04df321f82cd1ad3f02419d5688ca7" name="apps/mobile_mail_frontend/config/routing.yml" role="data" />
    <file baseinstalldir="/" md5sum="61df8c4b07cc8c7fd8fbdbb0158afea9" name="apps/mobile_mail_frontend/i18n/messages.ja.xml" role="data" />
@@ -36,15 +39,26 @@
    <file baseinstalldir="/" md5sum="ba4e4467b2f18070418aa0545aecc61d" name="apps/mobile_mail_frontend/modules/opAuthMailAddress/templates/loginSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="8fca375711ed1f3706677bad063df53b" name="apps/pc_backend/modules/opAuthMailAddressPlugin/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="2ac41c31d3188b575063f1b8656ee8be" name="apps/pc_backend/modules/opAuthMailAddressPlugin/templates/indexSuccess.php" role="data" />
-   <file baseinstalldir="/" md5sum="ddc17f48a1fbe2ec1f8f44da47182784" name="apps/pc_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="ccecbeb857549fbd948eff26aa6432ff" name="apps/pc_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="f441195d36bf1948e40e2ba635bcf45d" name="apps/pc_frontend/modules/opAuthMailAddress/config/security.yml" role="data" />
-   <file baseinstalldir="/" md5sum="61aad657ca56c1d27d0df6fcd3044621" name="apps/pc_frontend/modules/opAuthMailAddress/templates/requestRegisterURLInput.php" role="data" />
-   <file baseinstalldir="/" md5sum="3b6085a8bb08fe6777c8fc2fdebc5027" name="apps/pc_frontend/modules/opAuthMailAddress/templates/requestRegisterURLSuccess.php" role="data" />
-   <file baseinstalldir="/" md5sum="800d21fb02f0bf582816b77a92cb2c69" name="config/auth.yml" role="data" />
+   <file baseinstalldir="/" md5sum="92a2b6f5d38f6e80ac24ea8bc56a4e47" name="apps/pc_frontend/modules/opAuthMailAddress/templates/helpLoginErrorSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="af0907dac7d2ed4f8892186d39b18748" name="apps/pc_frontend/modules/opAuthMailAddress/templates/passwordRecoveryCompleteSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="35e0d3d11d26b5aec3acc8a51b42db2a" name="apps/pc_frontend/modules/opAuthMailAddress/templates/passwordRecoverySuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="e49d7c12db9276d87304290de530d6c6" name="apps/pc_frontend/modules/opAuthMailAddress/templates/requestRegisterURLInput.php" role="data" />
+   <file baseinstalldir="/" md5sum="196f36a01c614f22624dd70e32e265d0" name="apps/pc_frontend/modules/opAuthMailAddress/templates/requestRegisterURLSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="400ad9b8f7c00684f0cb9f72d6fc6b26" name="config/auth.yml" role="data" />
+   <file baseinstalldir="/" md5sum="6ed43f0d338d9bec575114fe4ea31ecb" name="config/member_config.yml" role="data" />
+   <file baseinstalldir="/" md5sum="71740010b327aad563d649cdfe5ba4aa" name="i18n/messages.ja.xml" role="data" />
+   <file baseinstalldir="/" md5sum="e90b3efcd765381905294fef34f1e595" name="lib/action/opAuthMailAddressPluginAction.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="ad9a495bc6ebd9160875b7ec12b6f505" name="lib/form/MemberConfigSecretQuestionForm.class.php" role="data" />
    <file baseinstalldir="/" md5sum="835c2843d1f0dda62d1a38b63868fcc0" name="lib/form/opAuthConfigFormMailAddress.class.php" role="data" />
    <file baseinstalldir="/" md5sum="fe2fdd818abd083ce92d6876812bc3ac" name="lib/form/opAuthLoginFormMailAddress.class.php" role="data" />
-   <file baseinstalldir="/" md5sum="3a295dbb216332bc7a84bd7153a41554" name="lib/form/opAuthRegisterFormMailAddress.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="77722edcb64f64cbf33a19d2cd895819" name="lib/form/opAuthMailAddressPasswordChangeForm.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="043b3b3c3ec0aad8a8abe0349737399b" name="lib/form/opAuthMailAddressPasswordRecoveryForm.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="2ab810cf1e27c9f656b3624218dfd8f9" name="lib/form/opAuthRegisterFormMailAddress.class.php" role="data" />
    <file baseinstalldir="/" md5sum="32ed66664df89cccfe4f69c5e0c9e97f" name="lib/user/opAuthAdapterMailAddress.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="e050c4557ad4c523e3af179f70f0026a" name="templates/mail/mobile/_passwordRecovery.php" role="data" />
+   <file baseinstalldir="/" md5sum="364f6792aca3c5f51964ee06e44397bc" name="templates/mail/pc/_passwordRecovery.php" role="data" />
    <file baseinstalldir="/" md5sum="3b83ef96387f14655fc854ddc3c6bd57" name="LICENSE" role="data" />
   </dir>
  </contents>
@@ -155,6 +169,19 @@
    <date>2009-08-20</date>
    <license>apache</license>
    <notes>This is a development release. Added support for registering via empty email experimentaly.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.2.0</release>
+    <api>1.2.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2009-12-12</date>
+   <license>apache</license>
+   <notes>Add password reminder support.</notes>
   </release>
  </changelog>
 </package>
