@@ -42,7 +42,9 @@ class MemberConfigSecretQuestionForm extends MemberConfigForm
 
   public function filterAnswer($validator, $value)
   {
-    return md5($value);
+    $value['secret_answer'] = md5($value['secret_answer']);
+
+    return $value;
   }
 
   public function isValidPassword($validator, $value)
