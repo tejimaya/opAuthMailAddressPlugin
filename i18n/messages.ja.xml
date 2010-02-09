@@ -36,7 +36,7 @@
       </trans-unit>
       <trans-unit id="">
         <source>What is region name of your domicile of origin?</source>
-        <target>本籍地の県名は？</target>
+        <target>本籍地の都道府県名は？</target>
       </trans-unit>
       <trans-unit id="">
         <source>Your Secret Question</source>
