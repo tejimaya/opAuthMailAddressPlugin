@@ -27,13 +27,13 @@ class opAuthMailAddressActions extends opAuthMailAddressPluginAction
 
     $this->forward404Unless(opToolkit::isEnabledRegistration());
 
-    $this->form = new InviteForm(null, array('authMode' => 'MailAddress'));
+    $this->form = new opRequestRegisterURLForm(null, array('authMode' => 'MailAddress'));
     if ($request->isMethod('post'))
     {
-      $this->form->bind($request->getParameter('member_config'));
+      $this->form->bind($request->getParameter('request_register_url'));
       if ($this->form->isValid())
       {
-        $this->form->save();
+        $this->form->sendMail();
 
         return sfView::SUCCESS;
       }
