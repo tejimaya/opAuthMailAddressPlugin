@@ -47,7 +47,7 @@ class opAuthMailAddressActions extends opAuthMailAddressPluginAction
     $this->getUser()->setCurrentAuthMode('MailAddress');
 
     $token = $request->getParameter('token');
-    $memberConfig = Doctrine::getTable('MemberConfig')->retrieveByNameAndValue('pc_address_token', $token);
+    $memberConfig = Doctrine::getTable('MemberConfig')->retrieveByNameAndValue('register_token', $token);
     $this->forward404Unless($memberConfig, 'This URL is invalid.');
 
     opActivateBehavior::disable();
@@ -63,6 +63,6 @@ class opAuthMailAddressActions extends opAuthMailAddressPluginAction
     $this->getUser()->setMemberId($memberConfig->getMemberId());
     $this->getUser()->setIsSNSRegisterBegin(true);
 
-    $this->redirect('member/registerInput');
+    $this->redirect('member/registerInput?token='.$token);
   }
 }

@@ -117,6 +117,7 @@ class opRequestRegisterURLForm extends BaseForm
     {
       $authMode = sfContext::getInstance()->getUser()->getCurrentAuthMode();
     }
+    $member->setConfig('register_auth_mode', $authMode);
 
     $params = array(
       'token'    => $token,
