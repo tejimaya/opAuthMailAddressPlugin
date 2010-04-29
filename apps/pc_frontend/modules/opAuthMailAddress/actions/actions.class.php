@@ -27,13 +27,13 @@ class opAuthMailAddressActions extends opAuthMailAddressPluginAction
 
     $this->forward404Unless(opToolkit::isEnabledRegistration());
 
-    $this->form = new InviteForm(null, array('authMode' => 'MailAddress'));
+    $this->form = new opRequestRegisterURLForm(null, array('authMode' => 'MailAddress'));
     if ($request->isMethod('post'))
     {
-      $this->form->bind($request->getParameter('member_config'));
+      $this->form->bind($request->getParameter('request_register_url'));
       if ($this->form->isValid())
       {
-        $this->form->save();
+        $this->form->sendMail();
 
         return sfView::SUCCESS;
       }
@@ -47,7 +47,7 @@ class opAuthMailAddressActions extends opAuthMailAddressPluginAction
     $this->getUser()->setCurrentAuthMode('MailAddress');
 
     $token = $request->getParameter('token');
-    $memberConfig = Doctrine::getTable('MemberConfig')->retrieveByNameAndValue('pc_address_token', $token);
+    $memberConfig = Doctrine::getTable('MemberConfig')->retrieveByNameAndValue('register_token', $token);
     $this->forward404Unless($memberConfig, 'This URL is invalid.');
 
     opActivateBehavior::disable();
@@ -63,6 +63,6 @@ class opAuthMailAddressActions extends opAuthMailAddressPluginAction
     $this->getUser()->setMemberId($memberConfig->getMemberId());
     $this->getUser()->setIsSNSRegisterBegin(true);
 
-    $this->redirect('member/registerInput');
+    $this->redirect('member/registerInput?token='.$token);
   }
 }

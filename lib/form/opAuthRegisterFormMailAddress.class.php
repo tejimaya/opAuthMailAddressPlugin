@@ -49,6 +49,7 @@ class opAuthRegisterFormMailAddress extends opAuthRegisterForm
     }
 
     $memberConfig->save();
+
     return $memberConfig;
   }
 }
