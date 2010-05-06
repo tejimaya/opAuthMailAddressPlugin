@@ -37,12 +37,14 @@ class opAuthMailAddressActions extends sfActions
     }
 
     $message = $request->getMailMessage();
-    $this->form = new InviteForm(null, array('authMode' => 'MailAddress'));
+
+    $this->form = new opRequestRegisterURLForm(null, array('authMode' => 'MailAddress'));
     $this->form->bind(array('mail_address' => $message->from));
     if ($this->form->isValid())
     {
-      $this->form->save();
+      $this->form->sendMail();
     }
+
     return sfView::NONE;
   }
 
