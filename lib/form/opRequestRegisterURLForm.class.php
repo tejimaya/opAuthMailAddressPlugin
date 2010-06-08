@@ -17,7 +17,9 @@
  */
 class opRequestRegisterURLForm extends BaseForm
 {
-  protected $doNotSend = false;
+  protected
+    $doNotSend = false,
+    $member = null;
 
   public function configure()
   {
@@ -80,7 +82,7 @@ class opRequestRegisterURLForm extends BaseForm
     }
     elseif ($config = Doctrine::getTable('MemberConfig')->retrieveByNameAndValue($configName.'_pre', $configValue))
     {
-      return false;
+      $this->member = $config->getMember();
     }
 
     return true;
@@ -95,7 +97,11 @@ class opRequestRegisterURLForm extends BaseForm
 
     $address = '';
 
-    $member = Doctrine::getTable('Member')->createPre();
+    $member = $this->member;
+    if (!$member)
+    {
+      $member = Doctrine::getTable('Member')->createPre();
+    }
 
     if ($this->getValue('pc_address'))
     {
