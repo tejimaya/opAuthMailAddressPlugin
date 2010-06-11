@@ -13,22 +13,24 @@
   <email />
   <active>yes</active>
  </lead>
- <date>2010-05-10</date>
- <time>11:54:30</time>
+ <date>2010-06-11</date>
+ <time>17:57:18</time>
  <version>
-  <release>1.3.0</release>
-  <api>1.3.0</api>
+  <release>1.3.1</release>
+  <api>1.3.1</api>
  </version>
  <stability>
-  <release>beta</release>
-  <api>beta</api>
+  <release>devel</release>
+  <api>devel</api>
  </stability>
  <license>apache</license>
  <notes>
-added supports for new authentication interfaces
+* Fixed re-sending registration e-mail that doesn&apos;t work (空メールを複数回送った場合にメールが一通しか返送されない問題の修正
+* Added value of &apos;auth_mode_caption&apos; for this authentication plugin
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
+   <file baseinstalldir="/" md5sum="76ff16da367e82fdeac98cb4fb713f4a" name="apps/mobile_frontend/i18n/messages.ja.xml" role="data" />
    <file baseinstalldir="/" md5sum="effc15a47d602819f5c0a1c3ed011c90" name="apps/mobile_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="6804d3f6741475d99de61a6d5150f1ec" name="apps/mobile_frontend/modules/opAuthMailAddress/actions/components.class.php" role="data" />
    <file baseinstalldir="/" md5sum="be9459b5247c2198cf6999310104b1ad" name="apps/mobile_frontend/modules/opAuthMailAddress/config/security.yml" role="data" />
@@ -52,7 +54,7 @@ added supports for new authentication interfaces
    <file baseinstalldir="/" md5sum="e49d7c12db9276d87304290de530d6c6" name="apps/pc_frontend/modules/opAuthMailAddress/templates/requestRegisterURLInput.php" role="data" />
    <file baseinstalldir="/" md5sum="196f36a01c614f22624dd70e32e265d0" name="apps/pc_frontend/modules/opAuthMailAddress/templates/requestRegisterURLSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="d0463b1514d78ffb5d7948e3f137b537" name="apps/pc_frontend/modules/opAuthMailAddress/templates/_registerBox.php" role="data" />
-   <file baseinstalldir="/" md5sum="400ad9b8f7c00684f0cb9f72d6fc6b26" name="config/auth.yml" role="data" />
+   <file baseinstalldir="/" md5sum="5bc77abb042c3677ec2b4de5ab3e0fcc" name="config/auth.yml" role="data" />
    <file baseinstalldir="/" md5sum="6ed43f0d338d9bec575114fe4ea31ecb" name="config/member_config.yml" role="data" />
    <file baseinstalldir="/" md5sum="788d58084959129b4c4cf07d9b584f84" name="i18n/messages.ja.xml" role="data" />
    <file baseinstalldir="/" md5sum="e90b3efcd765381905294fef34f1e595" name="lib/action/opAuthMailAddressPluginAction.class.php" role="data" />
@@ -62,7 +64,7 @@ added supports for new authentication interfaces
    <file baseinstalldir="/" md5sum="77722edcb64f64cbf33a19d2cd895819" name="lib/form/opAuthMailAddressPasswordChangeForm.class.php" role="data" />
    <file baseinstalldir="/" md5sum="043b3b3c3ec0aad8a8abe0349737399b" name="lib/form/opAuthMailAddressPasswordRecoveryForm.class.php" role="data" />
    <file baseinstalldir="/" md5sum="81e17a971c474db27064b3352737a8d2" name="lib/form/opAuthRegisterFormMailAddress.class.php" role="data" />
-   <file baseinstalldir="/" md5sum="ad5b9dfd61f1799575e3bf29cc3ef79e" name="lib/form/opRequestRegisterURLForm.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="fa38f08aa6350d6038a2e6f01d05c11b" name="lib/form/opRequestRegisterURLForm.class.php" role="data" />
    <file baseinstalldir="/" md5sum="32ed66664df89cccfe4f69c5e0c9e97f" name="lib/user/opAuthAdapterMailAddress.class.php" role="data" />
    <file baseinstalldir="/" md5sum="ad68d884f953805f0bed2e50aa426404" name="templates/mail/mobile/_notifyRegisterURL.php" role="data" />
    <file baseinstalldir="/" md5sum="e050c4557ad4c523e3af179f70f0026a" name="templates/mail/mobile/_passwordRecovery.php" role="data" />
@@ -237,6 +239,22 @@ fixed issues that is configuring answer of secret question is broken
    <license>apache</license>
    <notes>
 added supports for new authentication interfaces
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.3.1</release>
+    <api>1.3.1</api>
+   </version>
+   <stability>
+    <release>devel</release>
+    <api>devel</api>
+   </stability>
+   <date>2010-06-11</date>
+   <license>apache</license>
+   <notes>
+* Fixed re-sending registration e-mail that doesn&apos;t work (空メールを複数回送った場合にメールが一通しか返送されない問題の修正
+* Added value of &apos;auth_mode_caption&apos; for this authentication plugin
    </notes>
   </release>
  </changelog>
