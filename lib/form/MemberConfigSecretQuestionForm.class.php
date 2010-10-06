@@ -30,6 +30,14 @@ class MemberConfigSecretQuestionForm extends MemberConfigForm
     );
   }
 
+  public function __construct(Member $member = null, $options = array(), $CSRFSecret = null)
+  {
+    parent::__construct($member, $options, $CSRFSecret);
+
+    // Hack for non-rendering secret answer
+    $this->widgetSchema['secret_answer']->setOption('type', 'text');
+  }
+
   public function setDefault($name, $default)
   {
     if ('secret_answer' === $name)
