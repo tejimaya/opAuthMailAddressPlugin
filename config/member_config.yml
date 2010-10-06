@@ -23,7 +23,7 @@ secretQuestion:
   secret_answer:
     Name:       "secret_answer"
     Caption:    "Answer for Secret Question"
-    FormType:   "input"
+    FormType:   "password"
     ValueType:  "text"
     IsRegist:   true
     IsConfig:   true
