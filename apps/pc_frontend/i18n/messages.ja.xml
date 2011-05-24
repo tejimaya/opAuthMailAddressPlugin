@@ -7,7 +7,7 @@
         <target>メールアドレスで登録する</target>
       </trans-unit>
       <trans-unit id="">
-        <source>You can go to the registration page by clicking the button bellow.</source>
+        <source>You can go to the registration page by clicking the button below.</source>
         <target>以下のボタンをクリックすると、招待されたメールアドレスで登録をおこないます。</target>
       </trans-unit>
       <trans-unit id="">
