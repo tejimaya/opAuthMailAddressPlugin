@@ -82,7 +82,15 @@ class opRequestRegisterURLForm extends BaseForm
     }
     elseif ($config = Doctrine::getTable('MemberConfig')->retrieveByNameAndValue($configName.'_pre', $configValue))
     {
+      $activation = opActivateBehavior::getEnabled();
+      opActivateBehavior::disable();
+
       $this->member = $config->getMember();
+
+      if ($activation)
+      {
+        opActivateBehavior::enable();
+      }
     }
 
     return true;
