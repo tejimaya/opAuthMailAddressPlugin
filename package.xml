@@ -13,11 +13,11 @@
   <email />
   <active>yes</active>
  </lead>
- <date>2010-10-13</date>
- <time>17:23:45</time>
+ <date>2011-07-21</date>
+ <time>22:28:33</time>
  <version>
-  <release>1.3.2</release>
-  <api>1.3.2</api>
+  <release>1.3.3</release>
+  <api>1.3.3</api>
  </version>
  <stability>
   <release>devel</release>
@@ -25,12 +25,13 @@
  </stability>
  <license>apache</license>
  <notes>
-* Fixed #433: fixed the secret_answer form field filled in to hashed user inputed value when the last request was failed (「秘密の質問の答え」に、エラー遷移時にハッシュ化された値が挿入されてしまう)
-* Fixed #1576: added missing translations (翻訳の漏れを修正)
+Fixed the following issues: 
+* Bug（バグ） #1770: 招待メールからの登録画面の英語化
+* Bug（バグ） #1815: 既に新規登録申請を行ったアドレスで２度目に新規登録申請を行うとInternal Server Errorになる
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <file baseinstalldir="/" md5sum="76ff16da367e82fdeac98cb4fb713f4a" name="apps/mobile_frontend/i18n/messages.ja.xml" role="data" />
+   <file baseinstalldir="/" md5sum="28614b57c6f574e9ad84b195a901bff6" name="apps/mobile_frontend/i18n/messages.ja.xml" role="data" />
    <file baseinstalldir="/" md5sum="effc15a47d602819f5c0a1c3ed011c90" name="apps/mobile_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="6804d3f6741475d99de61a6d5150f1ec" name="apps/mobile_frontend/modules/opAuthMailAddress/actions/components.class.php" role="data" />
    <file baseinstalldir="/" md5sum="be9459b5247c2198cf6999310104b1ad" name="apps/mobile_frontend/modules/opAuthMailAddress/config/security.yml" role="data" />
@@ -38,13 +39,14 @@
    <file baseinstalldir="/" md5sum="4aef3f11ce9ad46ee31119e53d4efcd0" name="apps/mobile_frontend/modules/opAuthMailAddress/templates/passwordRecoveryCompleteSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="b2cebe2d71ca89d87e299083310d809e" name="apps/mobile_frontend/modules/opAuthMailAddress/templates/passwordRecoverySuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="6d04f808bc0c9d6be33d3411fd47d018" name="apps/mobile_frontend/modules/opAuthMailAddress/templates/requestRegisterURLInput.php" role="data" />
-   <file baseinstalldir="/" md5sum="234732e8cef04dbb3d55c00a2e28f35b" name="apps/mobile_frontend/modules/opAuthMailAddress/templates/_registerBox.php" role="data" />
+   <file baseinstalldir="/" md5sum="0a794c163d1543123b2d196ef427541b" name="apps/mobile_frontend/modules/opAuthMailAddress/templates/_registerBox.php" role="data" />
    <file baseinstalldir="/" md5sum="1c04df321f82cd1ad3f02419d5688ca7" name="apps/mobile_mail_frontend/config/routing.yml" role="data" />
    <file baseinstalldir="/" md5sum="61df8c4b07cc8c7fd8fbdbb0158afea9" name="apps/mobile_mail_frontend/i18n/messages.ja.xml" role="data" />
    <file baseinstalldir="/" md5sum="8a6c758b48bf0da9298406812fda156f" name="apps/mobile_mail_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="ba4e4467b2f18070418aa0545aecc61d" name="apps/mobile_mail_frontend/modules/opAuthMailAddress/templates/loginSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="8fca375711ed1f3706677bad063df53b" name="apps/pc_backend/modules/opAuthMailAddressPlugin/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="2ac41c31d3188b575063f1b8656ee8be" name="apps/pc_backend/modules/opAuthMailAddressPlugin/templates/indexSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="f4f62049540cc9ce555a36aa4e3f7c85" name="apps/pc_frontend/i18n/messages.ja.xml" role="data" />
    <file baseinstalldir="/" md5sum="9ad5362b30302bb23edcb8b7e391d3d4" name="apps/pc_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="6804d3f6741475d99de61a6d5150f1ec" name="apps/pc_frontend/modules/opAuthMailAddress/actions/components.class.php" role="data" />
    <file baseinstalldir="/" md5sum="be9459b5247c2198cf6999310104b1ad" name="apps/pc_frontend/modules/opAuthMailAddress/config/security.yml" role="data" />
@@ -53,7 +55,7 @@
    <file baseinstalldir="/" md5sum="35e0d3d11d26b5aec3acc8a51b42db2a" name="apps/pc_frontend/modules/opAuthMailAddress/templates/passwordRecoverySuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="e49d7c12db9276d87304290de530d6c6" name="apps/pc_frontend/modules/opAuthMailAddress/templates/requestRegisterURLInput.php" role="data" />
    <file baseinstalldir="/" md5sum="196f36a01c614f22624dd70e32e265d0" name="apps/pc_frontend/modules/opAuthMailAddress/templates/requestRegisterURLSuccess.php" role="data" />
-   <file baseinstalldir="/" md5sum="d0463b1514d78ffb5d7948e3f137b537" name="apps/pc_frontend/modules/opAuthMailAddress/templates/_registerBox.php" role="data" />
+   <file baseinstalldir="/" md5sum="0a794c163d1543123b2d196ef427541b" name="apps/pc_frontend/modules/opAuthMailAddress/templates/_registerBox.php" role="data" />
    <file baseinstalldir="/" md5sum="5bc77abb042c3677ec2b4de5ab3e0fcc" name="config/auth.yml" role="data" />
    <file baseinstalldir="/" md5sum="e4c5e6d8a94cec05489a90b0375f80e1" name="config/member_config.yml" role="data" />
    <file baseinstalldir="/" md5sum="ad7864752e725de4330fdc0462430515" name="i18n/messages.ja.xml" role="data" />
@@ -64,7 +66,7 @@
    <file baseinstalldir="/" md5sum="77722edcb64f64cbf33a19d2cd895819" name="lib/form/opAuthMailAddressPasswordChangeForm.class.php" role="data" />
    <file baseinstalldir="/" md5sum="043b3b3c3ec0aad8a8abe0349737399b" name="lib/form/opAuthMailAddressPasswordRecoveryForm.class.php" role="data" />
    <file baseinstalldir="/" md5sum="735ff39240c8d0af41111e40d402cc07" name="lib/form/opAuthRegisterFormMailAddress.class.php" role="data" />
-   <file baseinstalldir="/" md5sum="fa38f08aa6350d6038a2e6f01d05c11b" name="lib/form/opRequestRegisterURLForm.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="18e15d1b860c28bdac71b3a9a0c29dbf" name="lib/form/opRequestRegisterURLForm.class.php" role="data" />
    <file baseinstalldir="/" md5sum="32ed66664df89cccfe4f69c5e0c9e97f" name="lib/user/opAuthAdapterMailAddress.class.php" role="data" />
    <file baseinstalldir="/" md5sum="ad68d884f953805f0bed2e50aa426404" name="templates/mail/mobile/_notifyRegisterURL.php" role="data" />
    <file baseinstalldir="/" md5sum="e050c4557ad4c523e3af179f70f0026a" name="templates/mail/mobile/_passwordRecovery.php" role="data" />
@@ -271,6 +273,23 @@ added supports for new authentication interfaces
    <notes>
 * Fixed #433: fixed the secret_answer form field filled in to hashed user inputed value when the last request was failed (「秘密の質問の答え」に、エラー遷移時にハッシュ化された値が挿入されてしまう)
 * Fixed #1576: added missing translations (翻訳の漏れを修正)
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.3.3</release>
+    <api>1.3.3</api>
+   </version>
+   <stability>
+    <release>devel</release>
+    <api>devel</api>
+   </stability>
+   <date>2011-07-21</date>
+   <license>apache</license>
+   <notes>
+Fixed the following issues: 
+* Bug（バグ） #1770: 招待メールからの登録画面の英語化
+* Bug（バグ） #1815: 既に新規登録申請を行ったアドレスで２度目に新規登録申請を行うとInternal Server Errorになる
    </notes>
   </release>
  </changelog>
