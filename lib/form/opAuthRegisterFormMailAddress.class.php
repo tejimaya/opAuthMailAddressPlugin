@@ -23,6 +23,8 @@ class opAuthRegisterFormMailAddress extends opAuthRegisterForm
 
     // Hack for non-rendering secret answer
     $this->configForm->getWidget('secret_answer')->setOption('type', 'text');
+    
+    $this->mergePostValidator(new sfValidatorCallback(array('callback' => array($this, 'validateMemberConfig'))));
   }
 
   public function bindAll($request)
@@ -60,4 +62,27 @@ class opAuthRegisterFormMailAddress extends opAuthRegisterForm
 
     return $memberConfig;
   }
+  
+  public function validateMemberConfig($validator, $values, $arguments = array())
+  {
+    if (sfConfig::get('app_is_mobile', false))
+    {
+      $memberConfig = Doctrine::getTable('MemberConfig')->retrieveByNameAndMemberId('mobile_address_pre', $this->getMember()->getId());
+      if (!$memberConfig)
+      {
+        throw new sfValidatorError($validator, 'Can access this registration URL with pc only.');
+      }
+    }
+    else
+    {
+      $memberConfig = Doctrine::getTable('MemberConfig')->retrieveByNameAndMemberId('pc_address_pre', $this->getMember()->getId());
+      if (!$memberConfig)
+      {
+        throw new sfValidatorError($validator, 'Can access this registration URL with mobile only.');
+      }
+    }
+
+    return $values;
+  }
+
 }
