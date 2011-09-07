@@ -102,6 +102,14 @@
         <source>* Participate in %1%</source>
         <target>■ %1% に参加する</target>
       </trans-unit>
+      <trans-unit id="">
+        <source>Can access this registration URL with pc only.</source>
+        <target>この登録用URLはPC専用です。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Can access this registration URL with mobile only.</source>
+        <target>この登録用URLは携帯電話専用です。</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

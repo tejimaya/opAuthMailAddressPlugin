@@ -12,5 +12,10 @@ class opAuthMailAddressComponents extends sfComponents
 {
   public function executeRegisterBox($request)
   {
+    $token = $request->getParameter('token');
+    $memberConfig = Doctrine::getTable('MemberConfig')->retrieveByNameAndValue('register_token', $token);
+    opActivateBehavior::disable();
+    $this->mobileAddressPre = $memberConfig->getMember()->getConfig('mobile_address_pre');
+    opActivateBehavior::enable();
   }
 }

@@ -52,6 +52,7 @@ class opAuthMailAddressActions extends opAuthMailAddressPluginAction
 
     opActivateBehavior::disable();
     $authMode = $memberConfig->getMember()->getConfig('register_auth_mode');
+    $pcAddressPre = $memberConfig->getMember()->getConfig('pc_address_pre');
     opActivateBehavior::enable();
 
     if ('MobileUID' === $authMode)
@@ -59,6 +60,12 @@ class opAuthMailAddressActions extends opAuthMailAddressPluginAction
       $authMode = 'MailAddress';
     }
     $this->forward404Unless($authMode === $this->getUser()->getCurrentAuthMode());
+
+    if (!$pcAddressPre)
+    {
+      
+      return sfView::ERROR;
+    }
 
     $this->getUser()->setMemberId($memberConfig->getMemberId());
     $this->getUser()->setIsSNSRegisterBegin(true);
