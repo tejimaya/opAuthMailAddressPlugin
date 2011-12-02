@@ -24,7 +24,7 @@ class opAuthRegisterFormMailAddress extends opAuthRegisterForm
     // Hack for non-rendering secret answer
     $this->configForm->getWidget('secret_answer')->setOption('type', 'text');
     
-    $this->mergePostValidator(new sfValidatorCallback(array('callback' => array($this, 'validateMemberConfig'))));
+    // $this->mergePostValidator(new sfValidatorCallback(array('callback' => array($this, 'validateMemberConfig'))));
   }
 
   public function bindAll($request)
