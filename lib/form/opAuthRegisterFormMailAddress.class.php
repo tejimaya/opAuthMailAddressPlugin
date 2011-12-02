@@ -55,6 +55,10 @@ class opAuthRegisterFormMailAddress extends opAuthRegisterForm
     else
     {
       $memberConfig = Doctrine::getTable('MemberConfig')->retrieveByNameAndMemberId('pc_address_pre', $this->getMember()->getId());
+      if (!$memberConfig)
+      {
+        $memberConfig = Doctrine::getTable('MemberConfig')->retrieveByNameAndMemberId('mobile_address_pre', $this->getMember()->getId());
+      }
       $memberConfig->setName('pc_address');
     }
 
