@@ -15,7 +15,7 @@ class opAuthMailAddressComponents extends sfComponents
     $token = $request->getParameter('token');
     $memberConfig = Doctrine::getTable('MemberConfig')->retrieveByNameAndValue('register_token', $token);
     opActivateBehavior::disable();
-    $this->pcAddressPre = $memberConfig->getMember()->getConfig('pc_address_pre') : $memberConfig->getMember()->getConfig('pc_address_pre') : $memberConfig->getMember()->getConfig('mobile_address_pre');
+    $this->pcAddressPre = $memberConfig->getMember()->getConfig('pc_address_pre') ? $memberConfig->getMember()->getConfig('pc_address_pre') : $memberConfig->getMember()->getConfig('mobile_address_pre');
     opActivateBehavior::enable();
   }
 }
