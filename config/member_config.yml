@@ -8,7 +8,7 @@ secretQuestion:
     Caption:    "Secret Question"
     FormType:   "select"
     ValueType:  "integer"
-    IsRegist:   true
+    IsRegist:   false
     IsConfig:   true
     IsUnique:   false
     IsRequired: true
@@ -25,7 +25,7 @@ secretQuestion:
     Caption:    "Answer for Secret Question"
     FormType:   "password"
     ValueType:  "text"
-    IsRegist:   true
+    IsRegist:   false
     IsConfig:   true
     IsUnique:   false
     IsRequired: true
