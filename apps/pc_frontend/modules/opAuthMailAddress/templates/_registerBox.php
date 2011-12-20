@@ -1,4 +1,4 @@
-<?php if (!$pcAddressPre): ?>
+<?php if (!$addressPre): ?>
 <?php
 $options = array(
   'title' => __('Errors'),
