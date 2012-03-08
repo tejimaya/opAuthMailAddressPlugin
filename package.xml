@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.7.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+<package packagerversion="1.9.0" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
     http://pear.php.net/dtd/tasks-1.0.xsd
     http://pear.php.net/dtd/package-2.0
     http://pear.php.net/dtd/package-2.0.xsd">
@@ -13,18 +13,28 @@
   <email />
   <active>yes</active>
  </lead>
- <date>2010-01-14</date>
- <time>21:28:56</time>
+ <lead>
+  <name>Yuya Watanabe</name>
+  <user>watanabe</user>
+  <email />
+  <active>yes</active>
+ </lead>
+ <date>2012-03-08</date>
+ <time>16:28:44</time>
  <version>
-  <release>1.2.1</release>
-  <api>1.2.1</api>
+  <release>1.2.2</release>
+  <api>1.2.2</api>
  </version>
  <stability>
   <release>stable</release>
   <api>stable</api>
  </stability>
  <license>apache</license>
- <notes>fixed issues that is configuring answer of secret question is broken</notes>
+ <notes>
+Backport（バックポート） #1897: 会員登録時にエラーになると秘密の質問がチェックサムになってしまう
+Backport（バックポート） #2410: opAuthRegisterFormMailAddress::doSave()の$memberConfig->setName()の処理で、レコードの存在チェックがない
+Backport（バックポート） #2848: 他の認証プラグインで「秘密の質問」の項目が表示されてしまう
+ </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
    <file baseinstalldir="/" md5sum="f4836b2af034960b1542a015cae6c4d4" name="apps/mobile_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
@@ -47,15 +57,15 @@
    <file baseinstalldir="/" md5sum="e49d7c12db9276d87304290de530d6c6" name="apps/pc_frontend/modules/opAuthMailAddress/templates/requestRegisterURLInput.php" role="data" />
    <file baseinstalldir="/" md5sum="196f36a01c614f22624dd70e32e265d0" name="apps/pc_frontend/modules/opAuthMailAddress/templates/requestRegisterURLSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="400ad9b8f7c00684f0cb9f72d6fc6b26" name="config/auth.yml" role="data" />
-   <file baseinstalldir="/" md5sum="6ed43f0d338d9bec575114fe4ea31ecb" name="config/member_config.yml" role="data" />
-   <file baseinstalldir="/" md5sum="71740010b327aad563d649cdfe5ba4aa" name="i18n/messages.ja.xml" role="data" />
+   <file baseinstalldir="/" md5sum="45d80291351e70c84059dfded231113a" name="config/member_config.yml" role="data" />
+   <file baseinstalldir="/" md5sum="788d58084959129b4c4cf07d9b584f84" name="i18n/messages.ja.xml" role="data" />
    <file baseinstalldir="/" md5sum="e90b3efcd765381905294fef34f1e595" name="lib/action/opAuthMailAddressPluginAction.class.php" role="data" />
-   <file baseinstalldir="/" md5sum="ec34f8c3b094c0a1f47f20fb3773a31e" name="lib/form/MemberConfigSecretQuestionForm.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="9794178d4d88119d3a48492d56ee40b7" name="lib/form/MemberConfigSecretQuestionForm.class.php" role="data" />
    <file baseinstalldir="/" md5sum="835c2843d1f0dda62d1a38b63868fcc0" name="lib/form/opAuthConfigFormMailAddress.class.php" role="data" />
    <file baseinstalldir="/" md5sum="fe2fdd818abd083ce92d6876812bc3ac" name="lib/form/opAuthLoginFormMailAddress.class.php" role="data" />
    <file baseinstalldir="/" md5sum="77722edcb64f64cbf33a19d2cd895819" name="lib/form/opAuthMailAddressPasswordChangeForm.class.php" role="data" />
    <file baseinstalldir="/" md5sum="043b3b3c3ec0aad8a8abe0349737399b" name="lib/form/opAuthMailAddressPasswordRecoveryForm.class.php" role="data" />
-   <file baseinstalldir="/" md5sum="2ab810cf1e27c9f656b3624218dfd8f9" name="lib/form/opAuthRegisterFormMailAddress.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="2d2afd75bb01f4791beea978dbf8b73b" name="lib/form/opAuthRegisterFormMailAddress.class.php" role="data" />
    <file baseinstalldir="/" md5sum="32ed66664df89cccfe4f69c5e0c9e97f" name="lib/user/opAuthAdapterMailAddress.class.php" role="data" />
    <file baseinstalldir="/" md5sum="e050c4557ad4c523e3af179f70f0026a" name="templates/mail/mobile/_passwordRecovery.php" role="data" />
    <file baseinstalldir="/" md5sum="364f6792aca3c5f51964ee06e44397bc" name="templates/mail/pc/_passwordRecovery.php" role="data" />
@@ -70,11 +80,6 @@
    <pearinstaller>
     <min>1.4.0</min>
    </pearinstaller>
-   <package>
-    <name>symfony</name>
-    <channel>pear.symfony-project.com</channel>
-    <min>1.2.0</min>
-   </package>
   </required>
  </dependencies>
  <phprelease />
@@ -90,7 +95,9 @@
    </stability>
    <date>2009-02-05</date>
    <license>Apache</license>
-   <notes>First release</notes>
+   <notes>
+First release
+   </notes>
   </release>
   <release>
    <version>
@@ -103,7 +110,9 @@
    </stability>
    <date>2009-05-17</date>
    <license>apache</license>
-   <notes>This plugin is now compatible with Doctrine</notes>
+   <notes>
+This plugin is now compatible with Doctrine
+   </notes>
   </release>
   <release>
    <version>
@@ -116,7 +125,9 @@
    </stability>
    <date>2009-07-18</date>
    <license>apache</license>
-   <notes>added an improved for mobile</notes>
+   <notes>
+added an improved for mobile
+   </notes>
   </release>
   <release>
    <version>
@@ -129,7 +140,9 @@
    </stability>
    <date>2009-07-27</date>
    <license>apache</license>
-   <notes>added support for some customizes (experimental)</notes>
+   <notes>
+added support for some customizes (experimental)
+   </notes>
   </release>
   <release>
    <version>
@@ -142,7 +155,9 @@
    </stability>
    <date>2009-08-03</date>
    <license>apache</license>
-   <notes>[opAuthMailAddress] temporal cope for #4219</notes>
+   <notes>
+[opAuthMailAddress] temporal cope for #4219
+   </notes>
   </release>
   <release>
    <version>
@@ -155,7 +170,9 @@
    </stability>
    <date>2009-08-06</date>
    <license>apache</license>
-   <notes>fixed requestRegisterURL doesn&apos;t render errors</notes>
+   <notes>
+fixed requestRegisterURL doesn&apos;t render errors
+   </notes>
   </release>
   <release>
    <version>
@@ -168,7 +185,9 @@
    </stability>
    <date>2009-08-20</date>
    <license>apache</license>
-   <notes>This is a development release. Added support for registering via empty email experimentaly.</notes>
+   <notes>
+This is a development release. Added support for registering via empty email experimentaly.
+   </notes>
   </release>
   <release>
    <version>
@@ -181,7 +200,9 @@
    </stability>
    <date>2009-12-12</date>
    <license>apache</license>
-   <notes>Add password reminder support.</notes>
+   <notes>
+Add password reminder support.
+   </notes>
   </release>
   <release>
    <version>
@@ -194,7 +215,26 @@
    </stability>
    <date>2010-01-14</date>
    <license>apache</license>
-   <notes>fixed issues that is configuring answer of secret question is broken</notes>
+   <notes>
+fixed issues that is configuring answer of secret question is broken
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.2.2</release>
+    <api>1.2.2</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2012-03-08</date>
+   <license>apache</license>
+   <notes>
+Backport（バックポート） #1897: 会員登録時にエラーになると秘密の質問がチェックサムになってしまう
+Backport（バックポート） #2410: opAuthRegisterFormMailAddress::doSave()の$memberConfig->setName()の処理で、レコードの存在チェックがない
+Backport（バックポート） #2848: 他の認証プラグインで「秘密の質問」の項目が表示されてしまう
+   </notes>
   </release>
  </changelog>
 </package>
