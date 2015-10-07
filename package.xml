@@ -8,22 +8,28 @@
  <summary>opAuthMailAddressPlugin</summary>
  <description>opAuthMailAddressPlugin</description>
  <lead>
-  <name>Kousuke Ebihara</name>
-  <user>ebihara</user>
-  <email />
-  <active>yes</active>
- </lead>
- <developer>
   <name>Yuya Watanabe</name>
   <user>watanabe</user>
   <email />
   <active>yes</active>
- </developer>
- <date>2011-12-08</date>
- <time>13:51:21</time>
+ </lead>
+ <lead>
+  <name>kaoru nishizoe</name>
+  <user>nishizoe</user>
+  <email />
+  <active>yes</active>
+ </lead>
+ <contributor>
+  <name>Kousuke Ebihara</name>
+  <user>ebihara</user>
+  <email />
+  <active>yes</active>
+ </contributor>
+ <date>2015-10-07</date>
+ <time>13:36:47</time>
  <version>
-  <release>1.3.5</release>
-  <api>1.3.5</api>
+  <release>1.3.5.1</release>
+  <api>1.3.5.1</api>
  </version>
  <stability>
   <release>stable</release>
@@ -31,12 +37,12 @@
  </stability>
  <license>apache</license>
  <notes>
-Bug（バグ） #2598: 他の認証プラグインで「秘密の質問」の項目が表示されてしまう
+version 1.3.5.1
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
    <file baseinstalldir="/" md5sum="28614b57c6f574e9ad84b195a901bff6" name="apps/mobile_frontend/i18n/messages.ja.xml" role="data" />
-   <file baseinstalldir="/" md5sum="27f9bd42b07b28f02bbbbd2b37a78251" name="apps/mobile_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="e3523c541b322ab54032099a497a3ca8" name="apps/mobile_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="d8f9de3f5394cfe6802ce9207b872887" name="apps/mobile_frontend/modules/opAuthMailAddress/actions/components.class.php" role="data" />
    <file baseinstalldir="/" md5sum="be9459b5247c2198cf6999310104b1ad" name="apps/mobile_frontend/modules/opAuthMailAddress/config/security.yml" role="data" />
    <file baseinstalldir="/" md5sum="07cd4e6f65cfb5eabd5d0ca76f1da409" name="apps/mobile_frontend/modules/opAuthMailAddress/templates/helpLoginErrorSuccess.php" role="data" />
@@ -52,7 +58,7 @@ Bug（バグ） #2598: 他の認証プラグインで「秘密の質問」の項
    <file baseinstalldir="/" md5sum="8fca375711ed1f3706677bad063df53b" name="apps/pc_backend/modules/opAuthMailAddressPlugin/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="2ac41c31d3188b575063f1b8656ee8be" name="apps/pc_backend/modules/opAuthMailAddressPlugin/templates/indexSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="f4f62049540cc9ce555a36aa4e3f7c85" name="apps/pc_frontend/i18n/messages.ja.xml" role="data" />
-   <file baseinstalldir="/" md5sum="de668a0ee1d9dfb6c7409343aa7bc9ed" name="apps/pc_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="fbff7d9293b6f2a5688bacc33b0b2fe7" name="apps/pc_frontend/modules/opAuthMailAddress/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="f2569d820aff5771a3380200453c1998" name="apps/pc_frontend/modules/opAuthMailAddress/actions/components.class.php" role="data" />
    <file baseinstalldir="/" md5sum="be9459b5247c2198cf6999310104b1ad" name="apps/pc_frontend/modules/opAuthMailAddress/config/security.yml" role="data" />
    <file baseinstalldir="/" md5sum="92a2b6f5d38f6e80ac24ea8bc56a4e47" name="apps/pc_frontend/modules/opAuthMailAddress/templates/helpLoginErrorSuccess.php" role="data" />
@@ -326,6 +332,21 @@ Bug（バグ） #1668: opAuthRegisterFormMailAddress::doSave()の-&gt;setName()�
    <license>apache</license>
    <notes>
 Bug（バグ） #2598: 他の認証プラグインで「秘密の質問」の項目が表示されてしまう
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.3.5.1</release>
+    <api>1.3.5.1</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2015-10-07</date>
+   <license>apache</license>
+   <notes>
+version 1.3.5.1
    </notes>
   </release>
  </changelog>
